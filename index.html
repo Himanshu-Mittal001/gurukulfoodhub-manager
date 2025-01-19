@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body class="dark-mode">
+
+  <div id="main-header">
+    <h2>Transaction Manager</h2>
+    <div id="date-container">
+      <label for="date">Date*</label>
+      <input type="date" id="date" required>
+    </div>
+    <div id="submit-container">
+      <button id="submitButton">Submit</button>
+    </div>
+    <div id="mode-toggle">
+      <label>Mode:</label>
+      <label class="switch">
+        <input type="checkbox" id="mode-switch">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div id="main-content">
+    <div class="header-row">
+      <div class="header-cell">Student (Class)</div>
+      <div class="header-cell">Debit Amount</div>
+      <div class="header-cell">Credit Amount</div>
+      <div class="header-cell">Total Balance</div>
+    </div>
+    <div id="student-table"></div>
+  </div>
+
+  <div id="footer">
+    <div id="grand-total">Grand Total = ₹0</div>
+    <div id="developer-note">&#169; Designed by Radhika</div>
+  </div>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>
