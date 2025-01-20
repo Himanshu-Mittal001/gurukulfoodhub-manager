@@ -11,7 +11,7 @@ const modeSwitch = document.getElementById('mode-switch');
     });
 
     function fetchStudentData() {
-  const url = 'https://script.google.com/macros/s/AKfycbzYzwlBMyMR8hwCRW1n70RiGfprsa_6ahiUzI9LeddGnNQFECs4EhRx8kZOuQOPc_Fz/exec'; // Your web app URL
+  const url = 'https://script.google.com/macros/s/AKfycbw1qewLwmq-VnRBujQ0mfMqnsY4m09-KbNe9LNGpOpB_fLL11MIEY7fXT0quM742ShH/exec'; // Your web app URL
 
   // Make a GET request to fetch data
   fetch(url)
@@ -105,7 +105,7 @@ const modeSwitch = document.getElementById('mode-switch');
   console.log('Entries to save:', entries);  // Log the entries before sending them
 
   if (entries.length > 0) {
-    fetch('https://script.google.com/macros/s/AKfycbzYzwlBMyMR8hwCRW1n70RiGfprsa_6ahiUzI9LeddGnNQFECs4EhRx8kZOuQOPc_Fz/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbw1qewLwmq-VnRBujQ0mfMqnsY4m09-KbNe9LNGpOpB_fLL11MIEY7fXT0quM742ShH/exec', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
