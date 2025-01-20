@@ -110,7 +110,7 @@ const modeSwitch = document.getElementById('mode-switch');
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ data: entries })
+      body: JSON.stringify({ data: entries })  // Correct JSON format
     })
     .then(response => response.json())
     .then(result => {
