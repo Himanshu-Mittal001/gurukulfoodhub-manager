@@ -11,12 +11,13 @@ const modeSwitch = document.getElementById('mode-switch');
     });
 
     function fetchStudentData() {
-  const url = 'https://script.google.com/macros/s/AKfycbzYzwlBMyMR8hwCRW1n70RiGfprsa_6ahiUzI9LeddGnNQFECs4EhRx8kZOuQOPc_Fz/exec'; // Your Google Apps Script URL
+  const url = 'https://script.google.com/macros/s/AKfycbzYzwlBMyMR8hwCRW1n70RiGfprsa_6ahiUzI9LeddGnNQFECs4EhRx8kZOuQOPc_Fz/exec'; // Your web app URL
 
   // Make a GET request to fetch data
   fetch(url)
     .then(response => response.json())
     .then(students => {
+      console.log('Fetched student data:', students);  // Log the data
       populateStudentList(students);
     })
     .catch(error => {
@@ -95,14 +96,15 @@ const modeSwitch = document.getElementById('mode-switch');
   rows.forEach(row => {
     const student = row.querySelector('.student-cell').textContent;
     const debit = row.querySelector('.amount-cell input:nth-child(1)').value;
-    const credit = row.querySelectorAll('.amount-cell input')[1].value; // Fixed accessing second input
+    const credit = row.querySelectorAll('.amount-cell input')[1].value;
     if (debit || credit) {
-      entries.push({ date, student, debit: debit || 0, credit: credit || 0 }); // Ensure values are 0 if empty
+      entries.push({ date, student, debit: debit || 0, credit: credit || 0 });
     }
   });
 
+  console.log('Entries to save:', entries);  // Log the entries before sending them
+
   if (entries.length > 0) {
-    // Make a POST request to save the data
     fetch('https://script.google.com/macros/s/AKfycbzYzwlBMyMR8hwCRW1n70RiGfprsa_6ahiUzI9LeddGnNQFECs4EhRx8kZOuQOPc_Fz/exec', {
       method: 'POST',
       headers: {
